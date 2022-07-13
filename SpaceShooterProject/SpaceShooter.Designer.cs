@@ -34,8 +34,8 @@ namespace SpaceShooterProject
             this.labelShields = new System.Windows.Forms.Label();
             this.ShieldsBar = new System.Windows.Forms.ProgressBar();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Player = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             this.SuspendLayout();
             // 
             // labelScore
@@ -75,14 +75,16 @@ namespace SpaceShooterProject
             this.GameTimer.Interval = 20;
             this.GameTimer.Tick += new System.EventHandler(this.GameTick);
             // 
-            // pictureBox1
+            // Player
             // 
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(446, 646);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.Player.ErrorImage = null;
+            this.Player.Image = global::SpaceShooterProject.Properties.Resources.Up;
+            this.Player.Location = new System.Drawing.Point(446, 646);
+            this.Player.Name = "Player";
+            this.Player.Size = new System.Drawing.Size(99, 75);
+            this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Player.TabIndex = 3;
+            this.Player.TabStop = false;
             // 
             // SpaceShooter
             // 
@@ -90,7 +92,7 @@ namespace SpaceShooterProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(984, 861);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Player);
             this.Controls.Add(this.ShieldsBar);
             this.Controls.Add(this.labelShields);
             this.Controls.Add(this.labelScore);
@@ -103,7 +105,7 @@ namespace SpaceShooterProject
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.isKeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.isKeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,7 +117,7 @@ namespace SpaceShooterProject
         private System.Windows.Forms.Label labelShields;
         private System.Windows.Forms.ProgressBar ShieldsBar;
         private System.Windows.Forms.Timer GameTimer;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox Player;
     }
 }
 

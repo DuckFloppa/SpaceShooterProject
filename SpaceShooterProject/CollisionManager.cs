@@ -11,14 +11,9 @@ namespace SpaceShooterProject
     {
         SpaceShooter gameScreen;
 
-
         public CollisionManager(SpaceShooter game)
         {
             gameScreen = game;
-        }
-
-        public CollisionManager()
-        {
         }
 
         public void DetectCollision()
@@ -31,8 +26,20 @@ namespace SpaceShooterProject
                 }
 
 
+                foreach (Control y in gameScreen.Controls)
+                {
+                    if (y is PictureBox && (string)y.Tag == "playerLaser" && x is PictureBox && (string)x.Tag == "ufo")
+                    {
+                        EnemyHit(y, x);
+                    }
 
-                ///add here later
+                    if (y is PictureBox && (string)y.Tag == "player" && x is PictureBox && (string)x.Tag == "enemyLaser")
+                    {
+                        PlayerHit(y, x);
+                    }
+
+                }
+                
             }
 
 
@@ -51,20 +58,27 @@ namespace SpaceShooterProject
         }
 
 
-        public void EnemyHit()
+        public void EnemyHit(Control x, Control y)
         {
+            if (x.Bounds.IntersectsWith(y.Bounds))
 
+            {
+                gameScreen.Controls.Remove(x);
+                ((PictureBox)x).Dispose();
+                gameScreen.Controls.Remove(y);
+                ((PictureBox)y).Dispose();
+                gameScreen.Score += 10;
+            }
         }
 
-        public void PlayerHit()
+        public void PlayerHit(Control x, Control y)
         {
-
+            if (x.Bounds.IntersectsWith(y.Bounds))
+            {
+                gameScreen.Controls.Remove(y);
+                ((PictureBox)y).Dispose();
+                gameScreen.PlayerShield -= 10;
+            }
         }
-
-
-
-
     }
-
-
 }

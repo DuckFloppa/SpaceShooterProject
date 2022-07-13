@@ -42,7 +42,7 @@ namespace SpaceShooterProject
                 }
             }
 
-            if (randomSpawn.Next(0, 1000) < 500)
+            if (randomSpawn.Next(0, 2000) < 500)
             {
                 SpawnYellowUfo();
             }

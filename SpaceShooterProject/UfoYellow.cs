@@ -33,8 +33,9 @@ namespace SpaceShooterProject
             gameScreen.Controls.Add(UfoSpawn);
             UfoSpawn.BringToFront();
 
-            shootTimer.Interval = 1000;
             shootTimer.Tick += new EventHandler(ShootTick);
+            shootTimer.Interval = 1000;
+            shootTimer.Start();
 
         }
 

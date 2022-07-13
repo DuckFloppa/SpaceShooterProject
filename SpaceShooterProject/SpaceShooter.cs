@@ -35,7 +35,7 @@ namespace SpaceShooterProject
         {
             spawnManage = new SpawnManager(this);
             collisionManage = new CollisionManager(this);
-            movementManage = new EnemyMovement();
+            movementManage = new EnemyMovement(this);
             InitializeComponent();
         }
 
@@ -55,6 +55,8 @@ namespace SpaceShooterProject
             MovePlayer();
 
             collisionManage.DetectCollision();
+
+            movementManage.MoveUFO();
 
 
         }

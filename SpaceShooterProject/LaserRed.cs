@@ -32,7 +32,7 @@ namespace SpaceShooterProject
                 CurrentLaser.Image = Properties.Resources.EnemyLaserDown;
             }
 
-            CurrentLaser.Tag = "Enemy";
+            CurrentLaser.Tag = "enemyLaser";
 
             
             base.CreateLaser(form);
